@@ -10,12 +10,13 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0",
-    "pytest-cov>=4.0",
+    "pip-audit",
 ]
 
-[tool.coverage.run]
-source = ["stellargate"]
-omit = ["tests/*", "*/tests/*"]
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+check_untyped_defs = true
 
 [project.scripts]
 stellargate = "stellargate.cli:main"
